@@ -9,5 +9,6 @@ Arch Linux - archlinux.org
 NixOS - nixos.org
 Omarchy - omarchy.org
 Fedora Linux - fedoraproject.org
+(default wallpaper from end-4 dotfiles)
 ```
 sorry if i didnt include everyone, theres ALOT of them
