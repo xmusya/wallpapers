@@ -93,6 +93,40 @@ done
 
 shopt -u nocaseglob
 
+# --- удаление разрешений из названий файлов ---
+strip_resolutions() {
+    log INF "проверяю разрешения в названиях файлов..."
+    local count=0
+
+    for wp in "$base_dir"/*.{jpg,jpeg,png,webp,svg}; do
+        [ -e "$wp" ] || continue
+        local name
+        name=$(basename "$wp")
+
+        local newname="$name"
+        # _images_XXXXxXXXX  (в т.ч. _images_dark_XXXXxXXXX)
+        newname=$(echo "$newname" | sed -E 's/_images(_dark)?_[0-9]+x[0-9]+/\1/')
+        # -XXXXxXXXX (в середине/конце имени)
+        newname=$(echo "$newname" | sed -E 's/-[0-9]+x[0-9]+//')
+        # XXXXxXXXX- (префикс)
+        newname=$(echo "$newname" | sed -E 's/^[0-9]+x[0-9]+-//')
+
+        if [ "$name" != "$newname" ]; then
+            if [ -e "$base_dir/$newname" ]; then
+                log WARN "коллизия: $name -> $newname (пропускаю)"
+                continue
+            fi
+            log_ok RNM "$name -> $newname"
+            mv "$wp" "$base_dir/$newname"
+            count=$((count + 1))
+        fi
+    done
+
+    log INF "  переименовано файлов: $count"
+}
+
+strip_resolutions
+
 echo ""
 log INF "готово."
 log INF "  сгенерировано: $gen_count"
