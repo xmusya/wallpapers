@@ -19,4 +19,4 @@ wpmanage.sh - Basically blurs and pixelates all of the wallpapers, also does the
 - Microsoft Windows(XP, 7, 8.1, etc.): windows.com
 - Fedora Linux: fedoraproject.org
 - Minecraft: minecraft.net
-- The last four are hand-picked
+The last four are hand-picked
