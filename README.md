@@ -8,15 +8,15 @@ colorsort.py - If u want to add your own wallpapers, run it with python-pillow i
 wpmanage.sh - Basically blurs and pixelates all of the wallpapers, also does them in 1440p
 
 # Credits
-- Omarchy Linux: omarchy.org
-- CachyOS: cachyos.org
-- GNOME: gnome.org
-- KDE(Plasma): kde.org
-- XFCE: xfce.org
-- Solus Linux: getsol.us
-- AerynOS: aerynos.com
-- Apple MacOS: apple.com
-- Microsoft Windows(XP, 7, 8.1, etc.): windows.com
-- Fedora Linux: fedoraproject.org
-- Minecraft: minecraft.net  
+- [Omarchy Linux](https://omarchy.org)
+- [CachyOS](https://cachyos.org)
+- [GNOME](https://gnome.org)
+- [KDE (Plasma)](https://kde.org)
+- [XFCE](https://xfce.org)
+- [Solus Linux](https://getsol.us)
+- [AerynOS](https://aerynos.com)
+- [Apple macOS](https://apple.com)
+- [Microsoft Windows (XP, 7, 8.1, etc.)](https://windows.com)
+- [Fedora Linux](https://fedoraproject.org)
+- [Minecraft](https://minecraft.net)  
 The last four are hand-picked
