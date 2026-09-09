@@ -19,7 +19,7 @@ import shutil
 from PIL import Image
 
 # Destination color directories based on Hue
-COLOR_DIRS = ["Red", "Orange", "Yellow", "Green", "Blue", "Indigo", "Violet"]
+COLOR_DIRS = ["Red", "Orange", "Yellow", "Green", "Blue", "Indigo", "Violet", "Black", "White"]
 
 def get_dominant_color(image_path):
     """
@@ -61,6 +61,17 @@ def get_dominant_color(image_path):
             elif mx == b_n:
                 h = (60 * ((r_n - g_n) / df) + 240) % 360
                 
+            # Calculate Saturation and Value
+            s = 0 if mx == 0 else df / mx
+            v = mx
+
+            # Low saturation = achromatic (black/white/gray)
+            if s < 0.1:
+                if v < 0.3:
+                    return "Black"
+                elif v > 0.7:
+                    return "White"
+
             # Classify by Hue range
             if 0 <= h < 15 or 345 <= h <= 360:
                 return "Red"
