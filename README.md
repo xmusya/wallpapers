@@ -16,6 +16,7 @@ wpmanage.sh - Basically blurs and pixelates all of the wallpapers, also does the
 - Solus Linux: getsol.us
 - AerynOS: aerynos.com
 - Apple MacOS: apple.com
-- Microsoft Windows: windows.com
+- Microsoft Windows(XP, 7, 8.1, etc.): windows.com
 - Fedora Linux: fedoraproject.org
-The last three are hand-picked
+- Minecraft: minecraft.net
+- The last four are hand-picked
