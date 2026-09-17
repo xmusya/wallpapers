@@ -15,10 +15,12 @@ wpmanage.sh - Basically blurs and pixelates all of the wallpapers, also does the
 - [XFCE](https://xfce.org)
 - [Solus Linux](https://getsol.us)
 - [AerynOS](https://aerynos.com)
-- [Apple macOS](https://apple.com)
-- [Microsoft Windows (XP, 7, 8.1, etc.)](https://windows.com)
+- [Apple macOS](https://apple.com) [got it from here](https://512pixels.net/projects/default-mac-wallpapers-in-5k/)
+- [Microsoft Windows (XP, 7, 8.1, etc.)](https://windows.com) [got it from here](https://windowswallpaper.miraheze.org/wiki/Main_Page)
 - [Fedora Linux](https://fedoraproject.org)
-- [Minecraft](https://minecraft.net)  
+- [Minecraft](https://minecraft.net) 
 - [LineageOS](https://lineageos.org)
+- [Google Pixel](https://google.com) [got it from here](https://www.androidauthority.com/google-pixel-wallpapers-download-3018358/)
 
 (MacOs, Windows, Fedora, Minecraft are handpicked)
+
