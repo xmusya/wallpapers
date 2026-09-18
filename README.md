@@ -3,9 +3,10 @@
 A repo of wallpaper collections sorted by color(Black, blue, green, etc.)
 
 # Scripts
-colorsort.py - If u want to add your own wallpapers, run it with python-pillow installed, choose the source directory, and it will sort it into the color folders.
-
-wpmanage.sh - Basically blurs and pixelates all of the wallpapers, also does them in 1440p
+- **`colorsort.py`**: Analyzes wallpapers using Pillow and HSV color space, sorting them into color folders.
+  - Automatically routes vertical/portrait images into `vertical/` subfolders.
+  - Recognizes device keywords (`pixel`, `lineage`, `iphone`) to force-move mobile wallpapers directly to `vertical/`.
+- **`wpmanage.sh`**: Generates blurred, pixelated, and 1440p-downscaled variants of all wallpapers.
 
 # Credits
 - [Omarchy Linux](https://omarchy.org)

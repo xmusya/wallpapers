@@ -19,7 +19,7 @@ from PIL import Image
 
 COLOR_DIRS = ["Red", "Orange", "Yellow", "Green", "Blue", "Indigo", "Violet", "Black", "White"]
 # Keywords that force destination into the "vertical" directory
-VERTICAL_KEYWORDS = ["pixel", "lineage", "iphone"]
+VERTICAL_KEYWORDS = ["pixel", "lineage", "iphone", "nothing"]
 
 def get_dominant_color(image_path):
     """
