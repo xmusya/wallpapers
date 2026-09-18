@@ -10,9 +10,6 @@ Wallpaper Color & Orientation Classifier & Sorter
   Or install it via system package manager (e.g., Arch/CachyOS):
 
     sudo pacman -S python-pillow
-  What this scripts does: 
-   Sorts images from the source directory, and moves them into colorsorted directories.
-   If the image is vertical it moves into the vertical directory(e.g. Black/vertical, Red/vertical)
 =============================================================================
 """
 
@@ -21,6 +18,8 @@ import shutil
 from PIL import Image
 
 COLOR_DIRS = ["Red", "Orange", "Yellow", "Green", "Blue", "Indigo", "Violet", "Black", "White"]
+# Keywords that force destination into the "vertical" directory
+VERTICAL_KEYWORDS = ["pixel", "lineage", "iphone"]
 
 def get_dominant_color(image_path):
     """
@@ -151,11 +150,20 @@ def main():
                 color = get_dominant_color(file_path)
 
                 if color:
-                    # Route to dedicated vertical subfolder if orientation is portrait
-                    target_folder = os.path.join(color, "vertical") if is_vertical(file_path) else color
+                    # Check if file name contains any target vertical keywords
+                    file_lower = file.lower()
+                    matched_keyword = next((kw for kw in VERTICAL_KEYWORDS if kw in file_lower), None)
+
+                    if matched_keyword:
+                        print(f"  [WARN] Keyword '{matched_keyword}' detected in '{file}'. Forcing into vertical/ folder.")
+                        force_vertical = True
+                    else:
+                        force_vertical = is_vertical(file_path)
+
+                    target_folder = os.path.join(color, "vertical") if force_vertical else color
                     os.makedirs(target_folder, exist_ok=True)
 
-                    # Sanitize & prefix destination filename (e.g., gnome_adwaita.jpg)
+                    # Sanitize & prefix destination filename
                     rel_dir = os.path.relpath(root, source_dir).split(os.sep)[0]
                     dest_file_name = f"{rel_dir}_{file}" if rel_dir != "." else file
                     dest_file_name = dest_file_name.replace("'", "").replace('"', '').replace(' ', '_')
